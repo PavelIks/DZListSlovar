@@ -18,22 +18,22 @@ namespace dzshka
             list_dictionary.Add(new C_Dictionary("namespace", "космос в имени"));
             list_dictionary.Add(new C_Dictionary("minecraft", "ремесло в шахте"));
 
-            foreach (var item in list_dictionary.OrderBy(x => x.word1))
+            foreach (var item in list_dictionary.OrderBy(x => x._word1))
             {
-                Console.WriteLine(item.word1 + "\t\t" + item.word2);
+                Console.WriteLine(item._word1 + "\t\t" + item._word2);
             }
         }
     }
 
     class C_Dictionary
     {
-        public C_Dictionary(string _word1, string _word2)
-        {
-            word1 = _word1;
-            word2 = _word2;
-        }
+        public string _word1 { get; set; }
+        public string _word2 { get; set; }
 
-        public string word1;
-        public string word2;
+        public C_Dictionary(string word1, string word2)
+        {
+            this._word1 = word1;
+            this._word2 = word2;
+        }
     }
 }
